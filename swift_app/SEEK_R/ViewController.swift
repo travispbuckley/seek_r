@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     @IBAction func postUsers(_ sender: Any) {
         var request = URLRequest(url: URL(string: "http://localhost:3000/users")!)
         request.httpMethod = "POST"
-        let postString = "name=\(usernameField.text)&password=\(password.text)"
+        
+        //let postString = "name=\(usernameField.text!)&password=\(password.text!)"
+        let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
@@ -36,7 +38,6 @@ class ViewController: UIViewController {
         task.resume()
         
     }
-    
     
 }
 
