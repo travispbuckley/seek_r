@@ -14,7 +14,7 @@
 		09C073F01E048BC500B9C36B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C073EE1E048BC500B9C36B /* LaunchScreen.storyboard */; };
 		09C073FB1E048BC500B9C36B /* SEEK_RTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073FA1E048BC500B9C36B /* SEEK_RTests.swift */; };
 		09C074061E048BC500B9C36B /* SEEK_RUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074051E048BC500B9C36B /* SEEK_RUITests.swift */; };
-		09C074141E048C6D00B9C36B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074131E048C6D00B9C36B /* User.swift */; };
+		09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074171E049A7500B9C36B /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		09C074011E048BC500B9C36B /* SEEK_RUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SEEK_RUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C074051E048BC500B9C36B /* SEEK_RUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEK_RUITests.swift; sourceTree = "<group>"; };
 		09C074071E048BC500B9C36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09C074131E048C6D00B9C36B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09C074171E049A7500B9C36B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +101,11 @@
 			children = (
 				09C073E51E048BC400B9C36B /* AppDelegate.swift */,
 				09C073E71E048BC400B9C36B /* ViewController.swift */,
+				09C074171E049A7500B9C36B /* RegisterViewController.swift */,
 				09C073E91E048BC400B9C36B /* Main.storyboard */,
 				09C073EC1E048BC400B9C36B /* Assets.xcassets */,
 				09C073EE1E048BC500B9C36B /* LaunchScreen.storyboard */,
 				09C073F11E048BC500B9C36B /* Info.plist */,
-				09C074131E048C6D00B9C36B /* User.swift */,
 			);
 			path = SEEK_R;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */,
 				09C073E81E048BC400B9C36B /* ViewController.swift in Sources */,
 				09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */,
-				09C074141E048C6D00B9C36B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +507,7 @@
 				09C0740C1E048BC500B9C36B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09C0740D1E048BC500B9C36B /* Build configuration list for PBXNativeTarget "SEEK_RTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				09C0740F1E048BC500B9C36B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09C074101E048BC500B9C36B /* Build configuration list for PBXNativeTarget "SEEK_RUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +525,7 @@
 				09C074121E048BC500B9C36B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
