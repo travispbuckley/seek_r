@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var usernameField: UITextField!
 
+    @IBOutlet weak var password: UITextField!
+    
     @IBAction func postUsers(_ sender: Any) {
         var request = URLRequest(url: URL(string: "http://localhost:3000/users")!)
         request.httpMethod = "POST"
-        let postString = "name=eraince&password=pass"
+        let postString = "name=\(usernameField.text)&password=\(password.text)"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
