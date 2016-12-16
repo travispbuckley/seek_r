@@ -924,3 +924,695 @@ No template found for UsersController#create, rendering head :no_content
 Completed 204 No Content in 152ms (ActiveRecord: 1.3ms)
 
 
+  [1m[35m (57.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2855889342107354910);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161216190710)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161216190710"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-16 21:05:23 UTC], ["updated_at", 2016-12-16 21:05:23 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2855889342107354910)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-12-16 15:05:56 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 71ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:05:58 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:06:04 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 622ms (Views: 606.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:06:27 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qyqVk97x/XgpUfxHsfY6/1lRGQwst6RWRpdoKPQ6u/Hz56ljY6+4o2oq3lgpvWsdmwvwxcJJESN2Q95acpqDGQ==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 118ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:07:16 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:07:18 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SKJjud4J0MQcqgu0M1W+FkWzX9I8HKeOlg4bQSnuZO177V+WiZimFMJijFIhgcam0wktqYOx+sKjI4fggeBew==", "user"=>{"username"=>"hi", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 88ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:07:27 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:07:55 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mnnqt5vfB5YHOJChlktvX4r4pyRCaFgzEsQbGdJy0pDCtNZHJoFCTURDsr4OAD69SKJO7ayW7UYiEK1rVNLqeA==", "user"=>{"username"=>"11", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 90ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:09:19 -0600
+  
+SyntaxError (/Users/apprentice/kangkg-final-project/seek_r/rails_server/app/controllers/users_controller.rb:17: syntax error, unexpected ':', expecting '}'
+    format.json { verified: true }
+                           ^):
+  
+app/controllers/users_controller.rb:17: syntax error, unexpected ':', expecting '}'
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.4ms)
+Started GET "/users/new" for ::1 at 2016-12-16 15:09:22 -0600
+  
+SyntaxError (/Users/apprentice/kangkg-final-project/seek_r/rails_server/app/controllers/users_controller.rb:17: syntax error, unexpected ':', expecting '}'
+    format.json { verified: true }
+                           ^):
+  
+app/controllers/users_controller.rb:17: syntax error, unexpected ':', expecting '}'
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.6ms)
+Started GET "/users/new" for ::1 at 2016-12-16 15:09:53 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:09:57 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cupDpCrEBAzzDrCrFMHGx8Owp5WKAGxiKLV+d1lVQIMqJ39Ul5pB17B1krSMipclAepOXGT+2RcYYcgF3/V4aw==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 85ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:10:29 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:10:37 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGVf9/du/7aMIe+sywj6CBMe2XUC6RxeZmHBPy61fnf0qGMHSjC6bc9azbNTQ6vq0UQwvOwXqStWtXdNqBVGnw==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 87ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:11:37 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 51ms (Views: 27.6ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:11:40 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:13:in `create'
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.4ms)
+Started POST "/users" for ::1 at 2016-12-16 15:13:41 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$QiIJJBHv7Y8gR/YhyKq7kuBJLGRhyw5/EeM6X4yooL6SBL7lLtL.O"], ["created_at", 2016-12-16 21:13:41 UTC], ["updated_at", 2016-12-16 21:13:41 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 406 Not Acceptable in 89ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/users_controller.rb:17:in `create'
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.3ms)
+Started POST "/users" for ::1 at 2016-12-16 15:14:54 -0600
+  
+SyntaxError (/Users/apprentice/kangkg-final-project/seek_r/rails_server/app/controllers/users_controller.rb:45: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:45: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (92.0ms)
+Started POST "/users" for ::1 at 2016-12-16 15:15:05 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$UZ.Guw3mY0QNIGYtB0xkjujK7IrDkyKEfFGBB1Gfw2u5B2mHWucWG"], ["created_at", 2016-12-16 21:15:05 UTC], ["updated_at", 2016-12-16 21:15:05 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 157ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:06 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$iO3NbFzlrUHPrz9j9IO4X.3KGZA4y45zD5ztxeoxM1/orFYQJtJo."], ["created_at", 2016-12-16 21:15:07 UTC], ["updated_at", 2016-12-16 21:15:07 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 147ms (ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:07 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$c2AFoAMFUS4ld0sDBeO7wuXuPC.1iA8WBVdiewblJFHDu5ETTP2/6"], ["created_at", 2016-12-16 21:15:07 UTC], ["updated_at", 2016-12-16 21:15:07 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 155ms (ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:56 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$YfV1FgZnOt/fqRdg9l5cXuB1JQWqYBDOj2cIzujxIckaiKLMBQxny"], ["created_at", 2016-12-16 21:15:56 UTC], ["updated_at", 2016-12-16 21:15:56 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 163ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:57 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$2dy9VwlXo2IWIn//QCO49OixHBVWItjNMOmxuIb7u170NeZJ6ZCx."], ["created_at", 2016-12-16 21:15:57 UTC], ["updated_at", 2016-12-16 21:15:57 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:57 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$PtCD7xgdFE0rYGhbUM0D8eEtx.BdE0tAxdHPryCJxJp/1G.cw88kq"], ["created_at", 2016-12-16 21:15:57 UTC], ["updated_at", 2016-12-16 21:15:57 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 143ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:58 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$tw9XJpijIM7XwSb/hIqhEuSpCsZ4yZaDduiSYQpdVseHUg93E.JQG"], ["created_at", 2016-12-16 21:15:58 UTC], ["updated_at", 2016-12-16 21:15:58 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 148ms (ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:58 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$7DEQKVsTWPgK2.0PivAjhuH/Jkh9TkHrOYzbSjkpAlIi0kIV8dVRS"], ["created_at", 2016-12-16 21:15:58 UTC], ["updated_at", 2016-12-16 21:15:58 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:15:58 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$STfuFrEBVo1eHZpg4JntUugfoBMz3gKBCPjSeYkI9ZstuCWdhIham"], ["created_at", 2016-12-16 21:15:58 UTC], ["updated_at", 2016-12-16 21:15:58 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 141ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:02 -0600
+  
+SyntaxError (/Users/apprentice/kangkg-final-project/seek_r/rails_server/app/controllers/users_controller.rb:47: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:47: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.0ms)
+Started POST "/users" for ::1 at 2016-12-16 15:16:10 -0600
+  
+SyntaxError (/Users/apprentice/kangkg-final-project/seek_r/rails_server/app/controllers/users_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.0ms)
+Started POST "/users" for ::1 at 2016-12-16 15:16:21 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$.MYOkHPjFzu/hlEGsH9Cg.3/jbgvKvxX6JShX1NkV34lgkeXGkZtC"], ["created_at", 2016-12-16 21:16:21 UTC], ["updated_at", 2016-12-16 21:16:21 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 155ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:22 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$ouHT2RqI.85JoSW7NcpsmObExiHpPgl7kM97Lk.fihINutiaDVQLm"], ["created_at", 2016-12-16 21:16:22 UTC], ["updated_at", 2016-12-16 21:16:22 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 145ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:23 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$RBFOQ9lZ9zhgikdc9o8aWOeoHoNq3.p3LboQa9LU.KPJOtCe7C4om"], ["created_at", 2016-12-16 21:16:23 UTC], ["updated_at", 2016-12-16 21:16:23 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:23 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$iiMLdw2WY0QKKBmA4HqHy.c6XZXfq6IchNGSS8gZSqNgLw4gyLnzi"], ["created_at", 2016-12-16 21:16:23 UTC], ["updated_at", 2016-12-16 21:16:23 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 147ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:23 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xTRF45EXmR0hGM8kcvgZld86BSnL74+08i93OXwDrrKd+XkTLEncxmJj7Tvqs0h3HWDs4CUROsHC+8FL+qOWWg==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$Cr1k3MsLM34R77gMY8RmgeGiVr8Cg/N4tHVL3O5qz67F.fIhMKli6"], ["created_at", 2016-12-16 21:16:23 UTC], ["updated_at", 2016-12-16 21:16:23 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 145ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:16:32 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:38 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3h242kov20qLrwzcQAjfLAYGqlZYSZp11t8+45gW+LSG0IQq93GekcjULsPYQ47OxFxDn7a3LwDmC4iRHrbAXA==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$teReNLOGUw1TnCCqs9dTQOCkxZubUeX.ch96GDPow.v5vVK9GrqVe"], ["created_at", 2016-12-16 21:16:38 UTC], ["updated_at", 2016-12-16 21:16:38 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 147ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:16:53 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:16:56 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3m8pMCXqZ7StFzIGU5sUnwu/MnDPLBRSt2n3gCyJtcGGohXAmLQib+5sEBnL0EV9yeXbuSHSoSeHvUHyqimNKQ==", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "a"], ["password_digest", "$2a$10$9VNGogWcLEuNf7/Ft9q3ounVFShnUSTRMdNt2EyL849eizkdkNaJe"], ["created_at", 2016-12-16 21:16:56 UTC], ["updated_at", 2016-12-16 21:16:56 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 143ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:16:59 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:17:01 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfv44eT50Bn8VVwHuRJxDceRBKp+CkY4UTjjhgcs6PYtNsQRWaeVwr8ufhghWSDvBcvtY5D0801h7FX0gYzQHg==", "user"=>{"username"=>"sadas", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "sadas"], ["password_digest", "$2a$10$kCAKHJLQcSyHWAv271ufm.pIlVGnH2fvk8xo72rB0oGq/XnAwHdx2"], ["created_at", 2016-12-16 21:17:01 UTC], ["updated_at", 2016-12-16 21:17:01 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 148ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:17:04 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:17:16 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:17:21 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IRtuyeNCyvqDEgrwGu9y0Nn8gskH5vY7MnTxYPmTYkR51lI5XhyPIcBpKO+CpCMyG6ZrAOkYQ04CoEcSfzNarA==", "user"=>{"username"=>"1111", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "1111"], ["password_digest", "$2a$10$FJl22pPnvWPQ611orJh5gOkfA2FC88/kaRDrRtvbWUm6pFZYMos.q"], ["created_at", 2016-12-16 21:17:21 UTC], ["updated_at", 2016-12-16 21:17:21 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 155ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:17:37 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:17:47 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 38ms (Views: 23.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:17:56 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:18:00 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cR1vyWvxMdyZRKOlxaIQi8iz/Dpm5UNv1klcRtdlTiYp0FM51q90B9o/gbpd6UFpCukV84gb9hrmneo0UcV2zg==", "user"=>{"username"=>"lz", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "lz"], ["password_digest", "$2a$10$K1ABEo6vQnAhaaeC9mKqxuHbEy1pj7K4bewmBhyDSIQz6hVTgJ1c6"], ["created_at", 2016-12-16 21:18:00 UTC], ["updated_at", 2016-12-16 21:18:00 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 406 Not Acceptable in 84ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/users_controller.rb:17:in `create'
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.3ms)
+Started GET "/users/new" for ::1 at 2016-12-16 15:18:26 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 23.4ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:18:28 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RLNzj9f1goQMVQY3pXz84h+1tuSV1bG/k1b7AnvzbJccfk9/aqvHX08uJCg9N60A3e9fLXsrBMqjgk1w/VNUfw==", "user"=>{"username"=>"pz", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "pz"], ["password_digest", "$2a$10$cwHLOnAVp5sniLnfCtwDLetCXEtoP5ftAl6qwBXcB7HHW5Qo5koLm"], ["created_at", 2016-12-16 21:18:28 UTC], ["updated_at", 2016-12-16 21:18:28 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 144ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:18:48 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:18:58 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 23.0ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:19:03 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Nb52qLYg35JQBoG0Dd+8RA3jR/tj/foGCFZvqgkgKqAG8UqH4bGpQo7OBlIfC8T0m1k1gNxQp0o9e/MLoS4Qg==", "user"=>{"username"=>"1aszda", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "1aszda"], ["password_digest", "$2a$10$Lobh31gqprsqbLa4Ly62Re98SZu8ASvhAw.s0r3VhMT.v4bqAmzeC"], ["created_at", 2016-12-16 21:19:03 UTC], ["updated_at", 2016-12-16 21:19:03 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 156ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:21:14 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 46ms (Views: 25.4ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:21:18 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6unRDq/HVO3+1FdphXcpXjerwq6E/1BhmIeURQQ47QjZpu0h+FYiPSAc0I+Xo1HuoRGw1TtSDS2tqgjkrDbXA==", "user"=>{"username"=>"asdasdazasz", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "asdasdazasz"], ["password_digest", "$2a$10$BQc7jz4ZaS8O9p4Ui1xRxuTTS8KcZHVwl.dEvjxdjmZkHYM8PmDMy"], ["created_at", 2016-12-16 21:21:18 UTC], ["updated_at", 2016-12-16 21:21:18 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:23:01 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6unRDq/HVO3+1FdphXcpXjerwq6E/1BhmIeURQQ47QjZpu0h+FYiPSAc0I+Xo1HuoRGw1TtSDS2tqgjkrDbXA==", "user"=>{"username"=>"zx", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "zx"], ["password_digest", "$2a$10$WTZdEL.AwazPFhalYiYFKOvlPEMOYGeLQK8uTeKlZpF5vqFFaPrsG"], ["created_at", 2016-12-16 21:23:01 UTC], ["updated_at", 2016-12-16 21:23:01 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 94ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:23:38 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6unRDq/HVO3+1FdphXcpXjerwq6E/1BhmIeURQQ47QjZpu0h+FYiPSAc0I+Xo1HuoRGw1TtSDS2tqgjkrDbXA==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "pie"], ["password_digest", "$2a$10$tsDmwHblJMzl1PAhdxb2leeFFb0KepJtPh3BOm0nvbybw7rsYWnRC"], ["created_at", 2016-12-16 21:23:38 UTC], ["updated_at", 2016-12-16 21:23:38 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 99ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:23:44 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6unRDq/HVO3+1FdphXcpXjerwq6E/1BhmIeURQQ47QjZpu0h+FYiPSAc0I+Xo1HuoRGw1TtSDS2tqgjkrDbXA==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "pie"], ["password_digest", "$2a$10$CG0EH5LSoJSmS6br6JpXfuWYBfuoulFJ/N9pZFMG2SPFDIxiWe1YS"], ["created_at", 2016-12-16 21:23:44 UTC], ["updated_at", 2016-12-16 21:23:44 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 81ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:23:49 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6unRDq/HVO3+1FdphXcpXjerwq6E/1BhmIeURQQ47QjZpu0h+FYiPSAc0I+Xo1HuoRGw1TtSDS2tqgjkrDbXA==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "pie"], ["password_digest", "$2a$10$yMnG1GU0QbkvI/YgunK9zOQXqRBLeE1iPf4PJXv0FMLhx8NZfo.Ne"], ["created_at", 2016-12-16 21:23:49 UTC], ["updated_at", 2016-12-16 21:23:49 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 81ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:24:07 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:24:09 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"htiZ4I/h84Vd+RL4OuLBRo1QBC7mPeMpaTzyamJU0W3eFaUQMr+2Xh6CMOeiqZCkTwrt5wjDVlxZ6EQY5PTphQ==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pie"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$Uk2gjlt46l9d.IlKN9/1uue/RvTNsT/c8Y9lhdm7pVPQ.OPBPeglO"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 128ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:27:18 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:27:21 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6PTZHKKiUyvg33Ryg/PpY1E5zrv+kQepa9bab5axNb+wOeXsH/wW8KOkVm0buLiBk2MnchBvstxbAmwdEBENVw==", "user"=>{"username"=>"ada", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ada"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$0B2r4SbP9Npf1ELTkejW/uEVeNZAurXhVvts9krYSltI17jOTTY.q"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "ada"], ["password_digest", "$2a$10$0B2r4SbP9Npf1ELTkejW/uEVeNZAurXhVvts9krYSltI17jOTTY.q"], ["created_at", 2016-12-16 21:27:21 UTC], ["updated_at", 2016-12-16 21:27:21 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 85ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:27:25 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6PTZHKKiUyvg33Ryg/PpY1E5zrv+kQepa9bab5axNb+wOeXsH/wW8KOkVm0buLiBk2MnchBvstxbAmwdEBENVw==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pie"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$krdfopz7tP4/YcfcFWF7PO08TFQl2bG3juMLpvKFbN8B.u4XVJyA."], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 82ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:27:33 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6PTZHKKiUyvg33Ryg/PpY1E5zrv+kQepa9bab5axNb+wOeXsH/wW8KOkVm0buLiBk2MnchBvstxbAmwdEBENVw==", "user"=>{"username"=>"pie", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pie"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$OSmcIrpPiTajMQWcL5Wf5.S5bjitUaYQTct4SKXGSSk2ZvrM6SQd2"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 85ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:28:46 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:28:48 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMXmod6yD1WSoriK9wxolwUisZe6lEAdT9F/wMavCEogCNpRY+xKjtHZmpVvRzl1x3hYXlRq9Wh/BcmyQA8wog==", "user"=>{"username"=>"asdasda", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdasda"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$2nNg2PcNJfNlDja199tbLepox9oNBwzPWjJasMvWezLf/Q0acbLTG"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "asdasda"], ["password_digest", "$2a$10$2nNg2PcNJfNlDja199tbLepox9oNBwzPWjJasMvWezLf/Q0acbLTG"], ["created_at", 2016-12-16 21:28:48 UTC], ["updated_at", 2016-12-16 21:28:48 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 85ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:28:53 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMXmod6yD1WSoriK9wxolwUisZe6lEAdT9F/wMavCEogCNpRY+xKjtHZmpVvRzl1x3hYXlRq9Wh/BcmyQA8wog==", "user"=>{"username"=>"asdasdas", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdasdas"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$qu7Dqm2tN9QrD/s8egtQ..EhzENkX3.b2iAdqCl48p/Rw8.CG2Db."], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "asdasdas"], ["password_digest", "$2a$10$qu7Dqm2tN9QrD/s8egtQ..EhzENkX3.b2iAdqCl48p/Rw8.CG2Db."], ["created_at", 2016-12-16 21:28:53 UTC], ["updated_at", 2016-12-16 21:28:53 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 83ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:31:08 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 23.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:31:10 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lwl+IP8yWXIelGSq9gP2r4MhbE+PcUDcd916b3Ny0GLPxELQQmwcqV3vRrVuSKdNQXuFhmGP9alHCcwd9dLoig==", "user"=>{"username"=>"azsdza", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "azsdza"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$hcrq0CRdGhbcYs3COCJ2Se2mnq1e9aqWUV1FKBLOWY/e7PHbU3OUS"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "azsdza"], ["password_digest", "$2a$10$hcrq0CRdGhbcYs3COCJ2Se2mnq1e9aqWUV1FKBLOWY/e7PHbU3OUS"], ["created_at", 2016-12-16 21:31:10 UTC], ["updated_at", 2016-12-16 21:31:10 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 86ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
