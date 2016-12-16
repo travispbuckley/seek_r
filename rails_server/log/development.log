@@ -924,3 +924,64 @@ No template found for UsersController#create, rendering head :no_content
 Completed 204 No Content in 152ms (ActiveRecord: 1.3ms)
 
 
+Started POST "/users" for ::1 at 2016-12-16 15:51:29 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"eraince", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (21.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eraince"], ["password_digest", "$2a$10$MBFTJaauvFJ.jT5QHk.us.PSQJPkC4cvqFKLC9MQCJTsmVHXZqBuC"], ["role", "user"], ["created_at", 2016-12-16 21:51:30 UTC], ["updated_at", 2016-12-16 21:51:30 UTC]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 324ms (ActiveRecord: 41.5ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:51:31 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"eraince", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eraince"], ["password_digest", "$2a$10$tzBfwktAEANO7ZFi0TZ14OWRt/JyqdQ5M57cV3tmQNNhMcKo3ZNmG"], ["role", "user"], ["created_at", 2016-12-16 21:51:31 UTC], ["updated_at", 2016-12-16 21:51:31 UTC]]
+  [1m[35m (99.0ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 299ms (ActiveRecord: 99.5ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:51:32 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"eraince", "password"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eraince"], ["password_digest", "$2a$10$AANJGHq06NrX2dAY/H5DLO/w/qn47aI6CHHxvF0CUaLo999D7LJpS"], ["role", "user"], ["created_at", 2016-12-16 21:51:32 UTC], ["updated_at", 2016-12-16 21:51:32 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 161ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:51:32 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"eraince", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eraince"], ["password_digest", "$2a$10$i9xfAiSeuqQkTUXmHxM1EeDyCexuhlE5cozIzIpQliIS/nSmh134u"], ["role", "user"], ["created_at", 2016-12-16 21:51:32 UTC], ["updated_at", 2016-12-16 21:51:32 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 175ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:51:32 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"eraince", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eraince"], ["password_digest", "$2a$10$8xwiHkoA/b.i31Yq1v4oOOVop2gygmhax8/sswD2kx6SoGwYAPwEi"], ["role", "user"], ["created_at", 2016-12-16 21:51:32 UTC], ["updated_at", 2016-12-16 21:51:32 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 168ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:53:14 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"eraince", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eraince"], ["password_digest", "$2a$10$s1aSZC42oltvZ5KMt4FAEekgZLNvrLFtJci7dTCdmjem6c2AV2M.i"], ["role", "user"], ["created_at", 2016-12-16 21:53:14 UTC], ["updated_at", 2016-12-16 21:53:14 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 175ms (ActiveRecord: 0.9ms)
+
+
