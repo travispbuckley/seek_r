@@ -21,6 +21,7 @@ class RegisterViewController: ViewController {
 
 
     @IBAction func createUser(_ sender: UIButton) {
-        postRequest("http://localhost:3000/users")
+        let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
+        httpRequest("http://localhost:3000/users","POST",postString)
     }
   }

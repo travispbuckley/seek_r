@@ -15,19 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     
-    @IBAction func loginButton(_ sender: UIButton) {
-        postRequest("http://localhost:3000/sessions")
-    }
-    @IBAction func postUsers(_ sender: UIButton) {
-        postRequest("http://localhost:3000/users")
-    }
     
-    func postRequest(_ url: String) {
+    @IBAction func loginButton(_ sender: UIButton) {
+        let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
+        httpRequest("http://localhost:3000/sessions","POST",postString)
+    }
+
+    
+    func httpRequest(_ url: String, _ method:String,_ postString:String) {
         var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "POST"
+        request.httpMethod = method
         let session = URLSession.shared
         //let postString = "name=\(usernameField.text!)&password=\(password.text!)"
-        let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
+        //let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
         request.httpBody = postString.data(using: .utf8)
         let task = session.dataTask(with: request as URLRequest, completionHandler: {
             (
