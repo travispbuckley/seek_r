@@ -14,28 +14,59 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     
-    @IBAction func postUsers(_ sender: Any) {
-        var request = URLRequest(url: URL(string: "http://localhost:3000/users")!)
+    
+    @IBAction func loginButton(_ sender: UIButton) {
+        postRequest("http://localhost:3000/sessions")
+    }
+    @IBAction func postUsers(_ sender: UIButton) {
+        postRequest("http://localhost:3000/users")
+    }
+    
+    func postRequest(_ url: String) {
+        var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
-        
+        let session = URLSession.shared
         //let postString = "name=\(usernameField.text!)&password=\(password.text!)"
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
         request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {
+            (
+            data, response, error) in
+            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+                return
+            }
+            let json: Any?
+            do
+            {
+                json = try JSONSerialization.jsonObject(with: data!, options: [])
+                print(json ?? "there is no json")
+            }
+            catch
+            {
+                return
+            }
+            guard let server_response = json as? NSDictionary else
+            {
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+            
+            if let data_block = server_response["data"] as? NSDictionary
+            {
+                if let session_data = data_block["session"] as? String
+                {
+                    let preferences = UserDefaults.standard
+                    preferences.set(session_data, forKey: "session")
+                    
+                }
             }
             
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
-        }
+            
+            
+        })
+        
         task.resume()
+        
         
     }
     
