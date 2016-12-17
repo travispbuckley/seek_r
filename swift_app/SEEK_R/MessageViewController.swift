@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class MessageViewController: ViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+
+}
