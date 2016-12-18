@@ -9,6 +9,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Send Message-->
+        <scene sceneID="Zzr-HK-TJM">
+            <objects>
+                <viewController title="Send Message" id="lL1-vK-aGw" customClass="SendMessageViewController" customModule="SEEK_R" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RnY-a2-E2K"/>
+                        <viewControllerLayoutGuide type="bottom" id="i0L-GG-QEL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAA-4c-1Ty">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrm-vV-LGJ">
+                                <rect key="frame" x="119" y="143" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-tJ-reY">
+                                <rect key="frame" x="39" y="148" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvt-D6-WNO">
+                                <rect key="frame" x="119" y="222" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oN6-33-DL7">
+                                <rect key="frame" x="39" y="227" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnY-Mb-ssr">
+                                <rect key="frame" x="119" y="289" width="187" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="lL1-vK-aGw" eventType="touchUpInside" id="oBg-71-Bza"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageBody" destination="Mvt-D6-WNO" id="pMr-l8-tpP"/>
+                        <outlet property="receiverName" destination="qrm-vV-LGJ" id="yCd-eB-cgg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QhV-4p-hhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.60000000000002" y="-647.22638680659679"/>
+        </scene>
         <!--Login-->
         <scene sceneID="sQP-Kd-msd">
             <objects>
@@ -87,6 +150,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="tKR-mx-l7I" eventType="touchUpInside" id="jzN-wc-CUl"/>
+                                    <segue destination="lL1-vK-aGw" kind="show" id="sFf-XU-R9h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-nZ-RMs" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951.20000000000005" y="10.344827586206897"/>
+            <point key="canvasLocation" x="937" y="10"/>
         </scene>
         <!--Register-->
         <scene sceneID="9gc-tl-CIP">
@@ -171,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0t-TK-YGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="9.4452773613193415"/>
+            <point key="canvasLocation" x="1782" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gJ0-eY-Quc">

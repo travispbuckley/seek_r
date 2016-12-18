@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0918EB891E0702EA00FC113E /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918EB881E0702EA00FC113E /* MessagesTableViewController.swift */; };
+		0918EB8B1E07216500FC113E /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918EB8A1E07216500FC113E /* SendMessageViewController.swift */; };
 		09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073E51E048BC400B9C36B /* AppDelegate.swift */; };
 		09C073E81E048BC400B9C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073E71E048BC400B9C36B /* ViewController.swift */; };
 		09C073EB1E048BC400B9C36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C073E91E048BC400B9C36B /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0918EB881E0702EA00FC113E /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		0918EB8A1E07216500FC113E /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		09C073E21E048BC400B9C36B /* SEEK_R.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEEK_R.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C073E51E048BC400B9C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C073E71E048BC400B9C36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				09C073E51E048BC400B9C36B /* AppDelegate.swift */,
 				09C073E71E048BC400B9C36B /* ViewController.swift */,
 				09C074171E049A7500B9C36B /* RegisterViewController.swift */,
+				0918EB8A1E07216500FC113E /* SendMessageViewController.swift */,
+				0918EB881E0702EA00FC113E /* MessagesTableViewController.swift */,
 				09C073E91E048BC400B9C36B /* Main.storyboard */,
 				09C073EC1E048BC400B9C36B /* Assets.xcassets */,
 				09C073EE1E048BC500B9C36B /* LaunchScreen.storyboard */,
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */,
+				0918EB8B1E07216500FC113E /* SendMessageViewController.swift in Sources */,
+				0918EB891E0702EA00FC113E /* MessagesTableViewController.swift in Sources */,
 				09C073E81E048BC400B9C36B /* ViewController.swift in Sources */,
 				09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */,
 			);
