@@ -51,10 +51,7 @@ class SendMessageViewController: ViewController {
         let latitude = currentLocation.coordinate.latitude
         let longitude = currentLocation.coordinate.longitude
         
-        //
-        
         locationCoords.text! = "\(latitude), \(longitude)"
-        
             print("GET COORDS BUTTON HIT!")
     }
     
