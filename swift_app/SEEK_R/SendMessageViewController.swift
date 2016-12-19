@@ -37,10 +37,11 @@ class SendMessageViewController: ViewController {
     // MESSAGE INPUT //
     @IBOutlet weak var receiverName: UITextField!
     @IBOutlet weak var messageBody: UITextField!
+    @IBOutlet weak var locationCoords: UITextField!
 
     @IBAction func sendMessage(_ sender: UIButton) {
         
-        let postString = "message%5Breceiver%5D=\(receiverName.text!)&message%5Bbody%5D=\(messageBody.text!)"
+        let postString = "message%5Breceiver%5D=\(receiverName.text!)&message%5Bbody%5D=\(messageBody.text!)&message%5Blocation%5D=\(locationCoords.text!)"
         httpRequest("http://localhost:3000/messages","POST",postString)
     }
     
@@ -52,13 +53,32 @@ class SendMessageViewController: ViewController {
         
         //
         
-        messageBody.text! += "\(latitude), \(longitude)"
+        locationCoords.text! = "\(latitude), \(longitude)"
         
-        print("GET COORDS BUTTON HIT!")
+            print("GET COORDS BUTTON HIT!")
     }
     
+    //////////// UNDER DEVELOPMENT ////////////
+    ////// messages needs a new column ///////
+
+    
+    @IBAction func showUserLocation(_ sender: UIButton) {
+        
+            print("SHOW THE COORDS BUTTON HIT!")
+        // will change these to the messenger's loc:
+        let latitude = 41.8764102
+        let longitude = -90.65257710000003
+        //
+        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = "User's Location"
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
+
+    
+    ////////////////////////////////////////
+    //////////////////////////////////////////
+    
+    
 }
-
-
-
 // note: the app wont work properly until they restart after accepting. throws an error/crash
