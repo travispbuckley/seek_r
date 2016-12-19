@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import MapKit
+
 class SendMessageViewController: ViewController {
     
+    var locManager = CLLocationManager()
+    var currentLocation: CLLocation! // this holds our coords
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // requests user auth for GPS:
+        locManager.requestWhenInUseAuthorization()
+        
+        // this checks if user authorized on GPS:
+        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+            currentLocation = locManager.location
+            print(currentLocation.coordinate.latitude)
+            print(currentLocation.coordinate.longitude)
+        }
         
     }
     
@@ -18,6 +34,7 @@ class SendMessageViewController: ViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MESSAGE INPUT //
     @IBOutlet weak var receiverName: UITextField!
     @IBOutlet weak var messageBody: UITextField!
 
@@ -26,4 +43,22 @@ class SendMessageViewController: ViewController {
         let postString = "message%5Breceiver%5D=\(receiverName.text!)&message%5Bbody%5D=\(messageBody.text!)"
         httpRequest("http://localhost:3000/messages","POST",postString)
     }
+    
+    
+    // GPS COORD: //
+    @IBAction func getCoords(_ sender: Any) {
+        let latitude = currentLocation.coordinate.latitude
+        let longitude = currentLocation.coordinate.longitude
+        
+        //
+        
+        messageBody.text! += "\(latitude), \(longitude)"
+        
+        print("GET COORDS BUTTON HIT!")
+    }
+    
 }
+
+
+
+// note: the app wont work properly until they restart after accepting. throws an error/crash
