@@ -17,6 +17,7 @@
 		09C073FB1E048BC500B9C36B /* SEEK_RTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073FA1E048BC500B9C36B /* SEEK_RTests.swift */; };
 		09C074061E048BC500B9C36B /* SEEK_RUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074051E048BC500B9C36B /* SEEK_RUITests.swift */; };
 		09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074171E049A7500B9C36B /* RegisterViewController.swift */; };
+		09C074251E0849ED00B9C36B /* ConversationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074241E0849ED00B9C36B /* ConversationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		09C074051E048BC500B9C36B /* SEEK_RUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEEK_RUITests.swift; sourceTree = "<group>"; };
 		09C074071E048BC500B9C36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09C074171E049A7500B9C36B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		09C074241E0849ED00B9C36B /* ConversationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				09C073EE1E048BC500B9C36B /* LaunchScreen.storyboard */,
 				09C073F11E048BC500B9C36B /* Info.plist */,
 				0918EB8C1E073CDF00FC113E /* MessagesTableViewController.swift */,
+				09C074241E0849ED00B9C36B /* ConversationDetailViewController.swift */,
 			);
 			path = SEEK_R;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */,
 				0918EB8B1E07216500FC113E /* SendMessageViewController.swift in Sources */,
+				09C074251E0849ED00B9C36B /* ConversationDetailViewController.swift in Sources */,
 				09C073E81E048BC400B9C36B /* ViewController.swift in Sources */,
 				09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */,
 				0918EB8D1E073CDF00FC113E /* MessagesTableViewController.swift in Sources */,
