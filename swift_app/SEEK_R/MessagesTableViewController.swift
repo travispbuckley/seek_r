@@ -45,6 +45,20 @@ class MessagesTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        
+        if segue.identifier == "ShowAttractionDetails" {
+             print("prepare executed")
+            let detailViewController = segue.destination
+                as! ConversationDetailViewController
+            
+            let myIndexPath = self.tableView.indexPathForSelectedRow!
+            print("hey")
+            detailViewController.webSite = convoNames[String(myIndexPath.row)]!
+        }
+    }
+    
     func requestConversations(_ url: String){
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
