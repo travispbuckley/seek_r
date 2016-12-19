@@ -53,29 +53,6 @@ class SendMessageViewController: ViewController {
         
         locationCoords.text! = "\(latitude), \(longitude)"
             print("GET COORDS BUTTON HIT!")
-    }
-    
-    //////////// UNDER DEVELOPMENT ////////////
-    ////// messages needs a new column ///////
-
-    
-    @IBAction func showUserLocation(_ sender: UIButton) {
-        
-            print("SHOW THE COORDS BUTTON HIT!")
-        // will change these to the messenger's loc:
-        let latitude = 41.8764102
-        let longitude = -90.65257710000003
-        //
-        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = "User's Location"
-        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-    }
-
-    
-    ////////////////////////////////////////
-    //////////////////////////////////////////
-    
-    
+    }    
 }
 // note: the app wont work properly until they restart after accepting. throws an error/crash

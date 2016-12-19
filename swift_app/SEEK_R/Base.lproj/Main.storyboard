@@ -360,16 +360,16 @@
                             <outlet property="delegate" destination="q7A-FG-7US" id="Hz4-eb-3Pd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="acR-cG-Q27"/>
+                    <navigationItem key="navigationItem" title="Conversations" id="acR-cG-Q27"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPs-cz-3HM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2848.8000000000002" y="-647.22638680659679"/>
         </scene>
-        <!--Conversations-->
+        <!--Messages-->
         <scene sceneID="OjS-6g-rYh">
             <objects>
-                <viewController title="Conversations" id="gse-GB-A1T" customClass="ConversationDetailViewController" customModule="SEEK_R" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Messages" id="gse-GB-A1T" customClass="ConversationDetailViewController" customModule="SEEK_R" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3J-CB-J0u"/>
                         <viewControllerLayoutGuide type="bottom" id="Iln-M9-yRX"/>
@@ -378,13 +378,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssi-5s-HgP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssi-5s-HgP">
                                 <rect key="frame" x="16" y="78" width="343" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MV6-NS-nE0">
+                                <rect key="frame" x="192" y="437" width="206" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.13781624238351786" blue="0.19521948390983412" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Other User's Current Location"/>
+                                <connections>
+                                    <action selector="otherUserLocation:" destination="gse-GB-A1T" eventType="touchUpInside" id="Bdg-t7-b8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
