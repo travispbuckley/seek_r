@@ -19,18 +19,13 @@ class ConversationDetailViewController: UIViewController {
         messageWindow.text = ""
         if let address = webSite {
             print(address)
-            DispatchQueue.main.async(execute: {
-                self.requestMessages("http://localhost:3000/messages/" + address)
-            })
-            
+            self.requestMessages("http://localhost:3000/messages/" + address)
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
     
 
@@ -74,21 +69,18 @@ class ConversationDetailViewController: UIViewController {
 
                 if let messages = data_block["messages"] as? NSArray
                 {
-                    print("ITs and array")
+                    var i = 0
+                    var message = ""
+                    while i < messages.count {
+                      message += "\(messages[i])\n"
+                      i += 1
+                    }
                     
-                    self.messageWindow.text = "\(messages[0])\n\(messages[1])\n\(messages[2])"
-                
-
-                    //print(data_block[messages])
-                    //self.messages.text = messages as! [String]
-                    //print(messages)
-                    //self.messagesField.text = self.messages["0"]
+                    DispatchQueue.main.async(execute: {
+                        self.messageWindow.text = message
+                    })
                 }
-                
             }
-            
-            
-            
         })
         
         task.resume()
