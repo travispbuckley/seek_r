@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import MapKit
 
 class ConversationDetailViewController: UIViewController {
     
     @IBOutlet weak var messageWindow: UILabel!
+    var otherUserLatitude = 0.0
+    var otherUserLongitude = 0.0
+    
+    ////////// users current locations ///////
+    @IBAction func otherUserLocation(_ sender: UIButton) {
+        print("SHOW THE COORDS BUTTON HIT!")
+        // will change these to the messenger's loc:
+        let latitude = otherUserLatitude
+        let longitude = otherUserLongitude
+        //
+        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = "User's Location"
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
+    
     
     var webSite: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         messageWindow.text = ""
         if let address = webSite {
             print(address)
@@ -80,6 +98,14 @@ class ConversationDetailViewController: UIViewController {
                         self.messageWindow.text = message
                     })
                 }
+            }
+                
+            // sets the user location
+            if let otherLocation = server_response["location"] as? NSArray
+            {
+                self.otherUserLatitude = otherLocation[0] as! Double
+                self.otherUserLongitude = otherLocation[1] as! Double
+                
             }
         })
         
