@@ -107,6 +107,22 @@ class MessagesTableViewController: UITableViewController {
 
     }
     
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        let preferences = UserDefaults.standard
+        preferences.set(nil, forKey: "session")
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "LogoutButtonSegue", sender: self)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Section \(section)"

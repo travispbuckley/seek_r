@@ -14,7 +14,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.hidesBackButton = true;        
+    }
     
     @IBAction func loginButton(_ sender: UIButton) {
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
@@ -64,20 +68,12 @@ class ViewController: UIViewController {
                 
                 // if there is a set session data, then segue into the next page.. or not:
                 if successfulLogin == true {
-                    print("SUCCCESFUL")
-                    
-                    
-                    // THIS TAKES FOREVER
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "SendMessageSegue", sender: self)
                     }
-                    ///
-
-      
-                    
                 } else {
                     print("bad user")
-                    
+                    // make an error box here.
                 }
             }
         })
