@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     
     func httpRequest(_ url: String, _ method:String,_ postString:String) {
+        var successfulLogin = false // will be used to login later
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = method
         let session = URLSession.shared
@@ -50,25 +51,28 @@ class ViewController: UIViewController {
                 return
             }
             
-            
+            // login with session and save it:
             if let data_block = server_response["data"] as? NSDictionary
             {
                 if let session_data = data_block["session"] as? String
                 {
                     let preferences = UserDefaults.standard
                     preferences.set(session_data, forKey: "session")
+                    successfulLogin = true
+                    print("LOGGED")
+                }
+                
+                // if there is a set session data, then segue into the next page.. or not:
+                if successfulLogin == true {
+                    print("SUCCCESFUL")
+                } else {
+                    print("bad user")
                     
                 }
             }
-            
-            
-            
         })
-        
-        task.resume()
-        
-        
-    }
+        task.resume() // this line placement is important for waiting
+    } //end-func
     
-}
+} // end-class
 
