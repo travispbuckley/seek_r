@@ -9,15 +9,16 @@
 import UIKit
 import MapKit
 
+
 class ConversationDetailViewController: UIViewController {
-    
     @IBOutlet weak var messageWindow: UILabel!
+    
+    // these will store the newest user location: however, i need to make it more robust instead of defaulting to 0,0 (somewhere near Africa).
     var otherUserLatitude = 0.0
     var otherUserLongitude = 0.0
     
     ////////// users current locations ///////
     @IBAction func otherUserLocation(_ sender: UIButton) {
-        print("SHOW THE COORDS BUTTON HIT!")
         // will change these to the messenger's loc:
         let latitude = otherUserLatitude
         let longitude = otherUserLongitude
@@ -84,7 +85,7 @@ class ConversationDetailViewController: UIViewController {
             
             if let data_block = server_response["data"] as? NSDictionary
             {
-
+                    print("YOU GOT TO DATA")
                 if let messages = data_block["messages"] as? NSArray
                 {
                     var i = 0
@@ -106,6 +107,9 @@ class ConversationDetailViewController: UIViewController {
                 self.otherUserLatitude = otherLocation[0] as! Double
                 self.otherUserLongitude = otherLocation[1] as! Double
                 
+            } else {
+                self.otherUserLatitude = 0.0
+                self.otherUserLongitude = 0.0
             }
         })
         
