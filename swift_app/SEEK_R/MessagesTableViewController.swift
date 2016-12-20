@@ -49,12 +49,11 @@ class MessagesTableViewController: UITableViewController {
        
         
         if segue.identifier == "ShowAttractionDetails" {
-             print("prepare executed")
+             print("debug: prepare executed in MessagesTableViewController")
             let detailViewController = segue.destination
                 as! ConversationDetailViewController
             
             let myIndexPath = self.tableView.indexPathForSelectedRow!
-            print("hey")
             detailViewController.webSite = convoNames[String(myIndexPath.row)]!
         }
     }
