@@ -89,6 +89,10 @@
                                     <action selector="getCoords:" destination="lL1-vK-aGw" eventType="touchUpInside" id="W2k-R9-mho"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2016-12-20 at 3.32.54 PM" translatesAutoresizingMaskIntoConstraints="NO" id="MsX-Lf-BAf">
+                                <rect key="frame" x="118" y="472" width="179" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -100,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhV-4p-hhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="-620"/>
+            <point key="canvasLocation" x="2163.768115942029" y="-620.38043478260875"/>
         </scene>
         <!--Login-->
         <scene sceneID="sQP-Kd-msd">
@@ -272,6 +276,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createUser:" destination="oOG-PR-MbF" eventType="touchUpInside" id="p9p-qL-xt8"/>
+                                    <segue destination="tKR-mx-l7I" kind="show" id="oEd-wA-hMf"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZb-ny-uyj">
@@ -400,8 +405,8 @@
                                     <action selector="otherUserLocation:" destination="gse-GB-A1T" eventType="touchUpInside" id="Bdg-t7-b8G"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssi-5s-HgP">
-                                <rect key="frame" x="20" y="28" width="343" height="591"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssi-5s-HgP">
+                                <rect key="frame" x="20" y="28" width="343" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -440,8 +445,10 @@
     </scenes>
     <resources>
         <image name="Screen Shot 2016-12-20 at 3.23.33 PM" width="109" height="144"/>
+        <image name="Screen Shot 2016-12-20 at 3.32.54 PM" width="148" height="206"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oEd-wA-hMf"/>
         <segue reference="8e6-ru-asf"/>
     </inferredMetricsTieBreakers>
 </document>

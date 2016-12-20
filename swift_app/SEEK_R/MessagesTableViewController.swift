@@ -12,8 +12,9 @@ class MessagesTableViewController: UITableViewController {
     var convoNames = [String: String]()
     
     override func viewDidLoad() {
-        requestConversations("http://localhost:3000/messages")
         super.viewDidLoad()
+        requestConversations("http://localhost:3000/messages")
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,7 +41,7 @@ class MessagesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         
-        cell.textLabel?.text = " Person \(convoNames[String(indexPath.row)]!)"
+        cell.textLabel?.text = "\(convoNames[String(indexPath.row)]!)"
         
         return cell
     }
