@@ -85,7 +85,6 @@ class ConversationDetailViewController: UIViewController {
             
             if let data_block = server_response["data"] as? NSDictionary
             {
-                    print("YOU GOT TO DATA")
                 if let messages = data_block["messages"] as? NSArray
                 {
                     var i = 0

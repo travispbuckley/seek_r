@@ -65,6 +65,16 @@ class ViewController: UIViewController {
                 // if there is a set session data, then segue into the next page.. or not:
                 if successfulLogin == true {
                     print("SUCCCESFUL")
+                    
+                    
+                    // THIS TAKES FOREVER
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "SendMessageSegue", sender: self)
+                    }
+                    ///
+
+      
+                    
                 } else {
                     print("bad user")
                     
