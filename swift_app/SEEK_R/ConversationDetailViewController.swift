@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import BigInt
+import CoreData
 
 class ConversationDetailViewController: UIViewController {
     @IBOutlet weak var messageWindow: UILabel!
@@ -88,9 +89,30 @@ class ConversationDetailViewController: UIViewController {
                 if let messages = data_block["messages"] as? NSArray
                 {
                     var i = 0
+                    var secretD = BigUInt(0)
+                    var secretN = BigUInt(0)
                     var message = ""
+                     let fetchRequest:NSFetchRequest<Privatekey> = Privatekey.fetchRequest()
+                    let username = data_block["you"] as! String
+                    print(username)
+                    fetchRequest.predicate = NSPredicate(format: "username == %@",username)
+                    do{
+                        let searchResult = try DatabaseController.getContext().fetch(fetchRequest)
+                        print(searchResult)
+                        secretN = BigUInt(searchResult[0].private_key_n!)!
+                        secretD = BigUInt(searchResult[0].private_key_d!)!
+                        print(secretD)
+                    }
+                    catch{
+                        print("Error: \(error)")
+                    }
+                    
                     while i < messages.count {
-                      message += "\(messages[i])\n"
+                        var encryptedMsg = messages[i] as! String
+                        print(encryptedMsg)
+                        var decyrptedMessage = EncryptionController.decrypt(BigUInt(encryptedMsg)! , secretN , secretD)
+                        print(decyrptedMessage)
+                      message += "\(decyrptedMessage)\n"
                       i += 1
                     }
                     

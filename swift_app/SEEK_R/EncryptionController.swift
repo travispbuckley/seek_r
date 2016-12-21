@@ -18,6 +18,8 @@ class EncryptionController{
             return message.power(key.exponent, modulus: key.modulus)
         } 
         let secret: BigUInt = BigUInt(messageBody.data(using: String.Encoding.utf8)!)
+        print("Secret")
+        print(secret)
         let cyphertext = encrypt(secret, key: key)
         
         return cyphertext
@@ -26,13 +28,18 @@ class EncryptionController{
     class func decrypt(_ messageBody: BigUInt,_ privateKeyN: BigUInt,_ privateKeyD: BigUInt) -> String {
         typealias Key = (modulus: BigUInt, exponent: BigUInt)
         let privateKey = (privateKeyN,privateKeyD)
-        
+        print(messageBody)
+        print(privateKeyN)
+        print(privateKeyD)
         func encrypt(_ message: BigUInt, key: Key) -> BigUInt {
             return message.power(key.exponent, modulus: key.modulus)
         }
         let plaintext = encrypt(messageBody, key: privateKey)
+        
+        //good
+        print(plaintext)
         let received = String(data: plaintext.serialize(), encoding: String.Encoding.utf8)
-        print(received!)
+        print(received)
         return received!
     }
     
@@ -89,21 +96,25 @@ class EncryptionController{
             // login with session and save it:
             if let publicKey = server_response["user"] as? NSDictionary
             {
-                print(publicKey)
-                print(publicKey["n"]!)
+
                 let publicKeyN = publicKey["n"] as! String
                 let bigintN = BigUInt(publicKeyN)
-                print(bigintN)
-                print(publicKeyN)
                 let publicKeyE = publicKey["e"] as! String
                 let bigintE = BigUInt(publicKeyE)
-                print(publicKeyE)
+                
+                let yourPublicKeyN = publicKey["your_n"] as! String
+                let yourBigintN = BigUInt(yourPublicKeyN)
+                let yourPublicKeyE = publicKey["your_e"] as! String
+                let yourBigintE = BigUInt(yourPublicKeyE)
+                
+                
                 let encryptedMessage = String(EncryptionController.encrypt(message, bigintN!, bigintE!))
+                let yourEncryptedMessage = String(EncryptionController.encrypt(message, yourBigintN!, yourBigintE!))
                 let url = "http://localhost:3000/messages"
                 var request = URLRequest(url: URL(string: url)!)
                 request.httpMethod = "POST"
                 let session = URLSession.shared
-                let postString2 = "message%5Breceiver%5D=\(username)&message%5Bbody%5D=\(encryptedMessage)&message%5Blocation%5D=\(locationCoords)"
+                let postString2 = "message%5Breceiver%5D=\(username)&message%5Bbody%5D=\(encryptedMessage)&message%5Byour_message%5D=\(yourEncryptedMessage)&message%5Blocation%5D=\(locationCoords)"
                 request.httpBody = postString2.data(using: .utf8)
                 let task = session.dataTask(with: request as URLRequest, completionHandler: {
                     (

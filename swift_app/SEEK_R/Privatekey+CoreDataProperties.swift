@@ -17,6 +17,8 @@ extension Privatekey {
     }
 
     @NSManaged public var private_key_d: String?
+    @NSManaged public var private_key_n: String?
+
     @NSManaged public var username: String?
 
 }
