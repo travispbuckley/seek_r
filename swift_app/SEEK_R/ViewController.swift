@@ -14,7 +14,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.hidesBackButton = true;        
+    }
     
     @IBAction func loginButton(_ sender: UIButton) {
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
@@ -23,6 +27,7 @@ class ViewController: UIViewController {
 
     
     func httpRequest(_ url: String, _ method:String,_ postString:String) {
+        var successfulLogin = false // will be used to login later
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = method
         let session = URLSession.shared
@@ -50,25 +55,30 @@ class ViewController: UIViewController {
                 return
             }
             
-            
+            // login with session and save it:
             if let data_block = server_response["data"] as? NSDictionary
             {
                 if let session_data = data_block["session"] as? String
                 {
                     let preferences = UserDefaults.standard
                     preferences.set(session_data, forKey: "session")
-                    
+                    successfulLogin = true
+                    print("LOGGED")
+                }
+                
+                // if there is a set session data, then segue into the next page.. or not:
+                if successfulLogin == true {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "SendMessageSegue", sender: self)
+                    }
+                } else {
+                    print("bad user")
+                    // make an error box here.
                 }
             }
-            
-            
-            
         })
-        
-        task.resume()
-        
-        
-    }
+        task.resume() // this line placement is important for waiting
+    } //end-func
     
-}
+} // end-class
 

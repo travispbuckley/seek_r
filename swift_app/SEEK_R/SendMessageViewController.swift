@@ -42,7 +42,7 @@ class SendMessageViewController: ViewController {
     @IBAction func sendMessage(_ sender: UIButton) {
         
         let postString = "message%5Breceiver%5D=\(receiverName.text!)&message%5Bbody%5D=\(messageBody.text!)&message%5Blocation%5D=\(locationCoords.text!)"
-        httpRequest("http://localhost:3000/messages","POST",postString)
+        httpRequest("http://localhost:3000/messages/","POST",postString)
     }
     
     
