@@ -37,7 +37,7 @@ class ConversationDetailViewController: UIViewController {
         
         messageWindow.text = ""
         if let address = webSite {
-            print(address)
+            // print(address)
             self.requestMessages("http://localhost:3000/messages/" + address)
         }
     }
@@ -97,6 +97,8 @@ class ConversationDetailViewController: UIViewController {
                     DispatchQueue.main.async(execute: {
                         self.messageWindow.text = message
                     })
+                    self.messageWindow.textColor = UIColor.white
+
                 }
             }
                 
