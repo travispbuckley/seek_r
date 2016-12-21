@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import BigInt
+import CoreData
 class RegisterViewController: ViewController {
     
     override func viewDidLoad() {
@@ -21,7 +22,21 @@ class RegisterViewController: ViewController {
 
 
     @IBAction func createUser(_ sender: UIButton) {
-        let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
+        print("start")
+  
+        
+        let keyArr = EncryptionController.generateKey()
+        let n: String = keyArr[0] as! String
+        let e = keyArr[1]
+        let d: String = keyArr[2] as! String
+        //let stringN: String = keyArr[0] as! String
+        let newPrivateKey = NSEntityDescription.insertNewObject(forEntityName: "Privatekey", into: DatabaseController.getContext()) as! Privatekey
+        newPrivateKey.private_key_d = d
+        newPrivateKey.private_key_n = n
+        print(d)    
+        newPrivateKey.username = usernameField.text!
+        DatabaseController.saveContext()
+        let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)&user%5Bpublic_key_n%5D=\(n)&user%5Bpublic_key_e%5D=\(e)"
         httpRequest("http://localhost:3000/users","POST",postString)
     }
   }

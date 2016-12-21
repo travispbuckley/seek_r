@@ -1,0 +1,6 @@
+framework module Pods_SEEK_RTests {
+  umbrella header "Pods-SEEK_RTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

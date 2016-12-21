@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Privatekey" representedClassName="Privatekey" syncable="YES">
+        <attribute name="private_key_d" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="private_key_n" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Privatekey" positionX="-63" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>
