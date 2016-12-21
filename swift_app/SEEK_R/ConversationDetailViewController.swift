@@ -13,50 +13,33 @@ import MapKit
 class ConversationDetailViewController: UIViewController {
     @IBOutlet weak var messageWindow: UILabel!
     
-    // these will store the newest user location: however, i need to make it more robust instead of defaulting to 0,0 (somewhere near Africa).
+    // these will store the newest user location: however, i need to make it more robust instead of defaulting to 0,0 (which is somewhere near Africa).
     var otherUserLatitude = 0.0
     var otherUserLongitude = 0.0
+    var webSite: String?
     
     ////////// users current locations ///////
     @IBAction func otherUserLocation(_ sender: UIButton) {
-        // will change these to the messenger's loc:
         let latitude = otherUserLatitude
         let longitude = otherUserLongitude
-        //
         let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = "User's Location"
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
     
-    
-    var webSite: String?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         messageWindow.text = ""
         if let address = webSite {
-            // print(address)
             self.requestMessages("http://localhost:3000/messages/" + address)
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func requestMessages(_ url: String){
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
@@ -113,11 +96,6 @@ class ConversationDetailViewController: UIViewController {
                 self.otherUserLongitude = 0.0
             }
         })
-        
         task.resume()
-        
-        
     }
-
-
 }
