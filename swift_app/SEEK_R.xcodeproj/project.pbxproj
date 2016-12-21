@@ -11,6 +11,11 @@
 		0918EB8D1E073CDF00FC113E /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918EB8C1E073CDF00FC113E /* MessagesTableViewController.swift */; };
 		0953540D1E0AD76200EA20B5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0953540C1E0AD76200EA20B5 /* BigInt.framework */; };
 		0953540F1E0AE3CF00EA20B5 /* EncryptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953540E1E0AE3CF00EA20B5 /* EncryptionController.swift */; };
+		095354111E0AE80700EA20B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095354101E0AE80700EA20B5 /* CoreData.framework */; };
+		095354131E0AE81700EA20B5 /* databaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095354121E0AE81700EA20B5 /* databaseController.swift */; };
+		095354161E0AE8D500EA20B5 /* privateKey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 095354141E0AE8D500EA20B5 /* privateKey.xcdatamodeld */; };
+		095354251E0AEFF600EA20B5 /* Privatekey+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095354231E0AEFF600EA20B5 /* Privatekey+CoreDataClass.swift */; };
+		095354261E0AEFF600EA20B5 /* Privatekey+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095354241E0AEFF600EA20B5 /* Privatekey+CoreDataProperties.swift */; };
 		09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073E51E048BC400B9C36B /* AppDelegate.swift */; };
 		09C073E81E048BC400B9C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073E71E048BC400B9C36B /* ViewController.swift */; };
 		09C073EB1E048BC400B9C36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C073E91E048BC400B9C36B /* Main.storyboard */; };
@@ -47,6 +52,11 @@
 		0918EB8C1E073CDF00FC113E /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		0953540C1E0AD76200EA20B5 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = "Pods/../build/Debug-iphoneos/BigInt/BigInt.framework"; sourceTree = "<group>"; };
 		0953540E1E0AE3CF00EA20B5 /* EncryptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionController.swift; sourceTree = "<group>"; };
+		095354101E0AE80700EA20B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		095354121E0AE81700EA20B5 /* databaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = databaseController.swift; sourceTree = "<group>"; };
+		095354151E0AE8D500EA20B5 /* privateKey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = privateKey.xcdatamodel; sourceTree = "<group>"; };
+		095354231E0AEFF600EA20B5 /* Privatekey+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Privatekey+CoreDataClass.swift"; sourceTree = "<group>"; };
+		095354241E0AEFF600EA20B5 /* Privatekey+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Privatekey+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		09C073E21E048BC400B9C36B /* SEEK_R.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEEK_R.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C073E51E048BC400B9C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C073E71E048BC400B9C36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095354111E0AE80700EA20B5 /* CoreData.framework in Frameworks */,
 				0953540D1E0AD76200EA20B5 /* BigInt.framework in Frameworks */,
 				83373360B0E9422422C40477 /* Pods_SEEK_R.framework in Frameworks */,
 			);
@@ -127,6 +138,8 @@
 		09C073E41E048BC400B9C36B /* SEEK_R */ = {
 			isa = PBXGroup;
 			children = (
+				095354231E0AEFF600EA20B5 /* Privatekey+CoreDataClass.swift */,
+				095354241E0AEFF600EA20B5 /* Privatekey+CoreDataProperties.swift */,
 				09C073E51E048BC400B9C36B /* AppDelegate.swift */,
 				09C073E71E048BC400B9C36B /* ViewController.swift */,
 				09C074171E049A7500B9C36B /* RegisterViewController.swift */,
@@ -138,6 +151,8 @@
 				0918EB8C1E073CDF00FC113E /* MessagesTableViewController.swift */,
 				09C074241E0849ED00B9C36B /* ConversationDetailViewController.swift */,
 				0953540E1E0AE3CF00EA20B5 /* EncryptionController.swift */,
+				095354121E0AE81700EA20B5 /* databaseController.swift */,
+				095354141E0AE8D500EA20B5 /* privateKey.xcdatamodeld */,
 			);
 			path = SEEK_R;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 		3F72A8007F849151A290697E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				095354101E0AE80700EA20B5 /* CoreData.framework */,
 				0953540C1E0AD76200EA20B5 /* BigInt.framework */,
 				F98702FF627A86DA5F8F72C8 /* Pods_SEEK_R.framework */,
 				7EB8D86838A068B5321D9BC0 /* Pods_SEEK_RTests.framework */,
@@ -468,11 +484,15 @@
 			files = (
 				09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */,
 				0918EB8B1E07216500FC113E /* SendMessageViewController.swift in Sources */,
+				095354161E0AE8D500EA20B5 /* privateKey.xcdatamodeld in Sources */,
 				09C074251E0849ED00B9C36B /* ConversationDetailViewController.swift in Sources */,
 				0953540F1E0AE3CF00EA20B5 /* EncryptionController.swift in Sources */,
+				095354131E0AE81700EA20B5 /* databaseController.swift in Sources */,
 				09C073E81E048BC400B9C36B /* ViewController.swift in Sources */,
 				09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */,
 				0918EB8D1E073CDF00FC113E /* MessagesTableViewController.swift in Sources */,
+				095354261E0AEFF600EA20B5 /* Privatekey+CoreDataProperties.swift in Sources */,
+				095354251E0AEFF600EA20B5 /* Privatekey+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +772,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		095354141E0AE8D500EA20B5 /* privateKey.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				095354151E0AE8D500EA20B5 /* privateKey.xcdatamodel */,
+			);
+			currentVersion = 095354151E0AE8D500EA20B5 /* privateKey.xcdatamodel */;
+			path = privateKey.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 09C073DA1E048BC400B9C36B /* Project object */;
 }

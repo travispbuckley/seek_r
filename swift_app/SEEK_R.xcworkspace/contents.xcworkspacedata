@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SEEK_R/Privatekey+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SEEK_R/Privatekey+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:SEEK_R.xcodeproj">
    </FileRef>
    <FileRef
