@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+import BigInt
 
 class ConversationDetailViewController: UIViewController {
     @IBOutlet weak var messageWindow: UILabel!
@@ -116,6 +116,5 @@ class ConversationDetailViewController: UIViewController {
         
         
     }
-
 
 }

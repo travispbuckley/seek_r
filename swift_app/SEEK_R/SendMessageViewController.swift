@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+import BigInt
 class SendMessageViewController: ViewController {
     
     var locManager = CLLocationManager()
@@ -41,6 +41,7 @@ class SendMessageViewController: ViewController {
 
     @IBAction func sendMessage(_ sender: UIButton) {
         
+        httpRequest("http://localhost:3000/users/" + receiverName.text!,"GET","")
         let postString = "message%5Breceiver%5D=\(receiverName.text!)&message%5Bbody%5D=\(messageBody.text!)&message%5Blocation%5D=\(locationCoords.text!)"
         httpRequest("http://localhost:3000/messages/","POST",postString)
     }
@@ -53,6 +54,7 @@ class SendMessageViewController: ViewController {
         
         locationCoords.text! = "\(latitude), \(longitude)"
             print("GET COORDS BUTTON HIT!")
-    }    
-}
+    }
+    
+    }
 // note: the app wont work properly until they restart after accepting. throws an error/crash
