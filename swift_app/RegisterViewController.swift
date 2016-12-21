@@ -12,6 +12,8 @@ class RegisterViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = false;        // may cause back button issues later on.
+
 
     }
     

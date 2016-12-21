@@ -16,6 +16,8 @@ class SendMessageViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = false;        // may cause back button issues later on.
+
         
         // requests user auth for GPS:
         locManager.requestWhenInUseAuthorization()
