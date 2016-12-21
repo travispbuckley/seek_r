@@ -42,7 +42,8 @@ class MessagesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         
         cell.textLabel?.text = "\(convoNames[String(indexPath.row)]!)"
-        
+        cell.textLabel?.textColor = UIColor.white
+
         return cell
     }
     
