@@ -21,22 +21,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="github.com/seek_r" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19L-Gd-RZK">
-                                <rect key="frame" x="113" y="595" width="141" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/seek_r" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19L-Gd-RZK">
+                                <rect key="frame" x="97.5" y="524.5" width="180" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SEEK_R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imc-Hk-kl9">
-                                <rect key="frame" x="158" y="100" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEEK_R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imc-Hk-kl9">
+                                <rect key="frame" x="0.0" y="76" width="375" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="qdc-EI-1NP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="nyan" highlightedImage="nyan" translatesAutoresizingMaskIntoConstraints="NO" id="I5R-JX-kJz">
+                                <rect key="frame" x="-83" y="233" width="360" height="132"/>
+                                <color key="backgroundColor" red="0.036446461668658336" green="0.15656723221750699" blue="0.65596955128205137" alpha="0.89339978448275859" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.058823529411764705" green="0.22745098039215686" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="19L-Gd-RZK" secondAttribute="bottom" constant="116" id="6Dp-MU-oX4"/>
+                            <constraint firstItem="19L-Gd-RZK" firstAttribute="top" secondItem="I5R-JX-kJz" secondAttribute="bottom" constant="157" id="FoL-9k-IJN"/>
+                            <constraint firstItem="imc-Hk-kl9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="JQQ-PC-2PY"/>
+                            <constraint firstItem="imc-Hk-kl9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="56" id="aUA-Ky-04k"/>
+                            <constraint firstAttribute="trailing" secondItem="imc-Hk-kl9" secondAttribute="trailing" id="bcz-kG-Wy1"/>
+                            <constraint firstItem="imc-Hk-kl9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hN4-wR-iIv"/>
+                            <constraint firstItem="19L-Gd-RZK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zzG-HO-wuh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,4 +58,7 @@
             <point key="canvasLocation" x="88.799999999999997" y="12.143928035982009"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nyan" width="311" height="162"/>
+    </resources>
 </document>
