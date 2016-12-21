@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-nZ-RMs" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2253.6231884057975" y="72.554347826086968"/>
+            <point key="canvasLocation" x="2258" y="112"/>
         </scene>
         <!--Register-->
         <scene sceneID="9gc-tl-CIP">
@@ -332,20 +332,25 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Sdj-QY-1oZ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wL-Sw-igC">
-                                <rect key="frame" x="69" y="374" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="3wL-Sw-igC">
+                                <rect key="frame" x="87" y="300" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="dy2-yS-B3K"/>
+                                    <constraint firstAttribute="width" constant="240" id="qWw-Vv-dcO"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.22745098039215686" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Pox-mP-RJC" firstAttribute="top" secondItem="RZb-ny-uyj" secondAttribute="bottom" constant="8" id="1vZ-tQ-dM0"/>
+                            <constraint firstItem="3wL-Sw-igC" firstAttribute="top" secondItem="EP9-hW-phA" secondAttribute="bottom" constant="40" id="3Im-wf-Ns1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pox-mP-RJC" secondAttribute="trailing" constant="20" id="4Oi-Rm-niO"/>
                             <constraint firstItem="WcZ-9i-hMc" firstAttribute="centerX" secondItem="Pox-mP-RJC" secondAttribute="centerX" id="4ur-2u-c0V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RZb-ny-uyj" secondAttribute="trailing" constant="20" id="9QV-mo-Kc2"/>
                             <constraint firstItem="4k6-SW-vvl" firstAttribute="top" secondItem="SQb-a6-B1J" secondAttribute="bottom" constant="8" id="B8J-d6-9nE"/>
                             <constraint firstItem="RZb-ny-uyj" firstAttribute="top" secondItem="4k6-SW-vvl" secondAttribute="bottom" constant="8" id="D2n-sY-43t"/>
                             <constraint firstItem="Pox-mP-RJC" firstAttribute="leading" secondItem="9d7-Zd-2cm" secondAttribute="leadingMargin" constant="20" id="G2H-gG-I8G"/>
+                            <constraint firstItem="3wL-Sw-igC" firstAttribute="centerX" secondItem="EP9-hW-phA" secondAttribute="centerX" id="GMH-Yx-XzV"/>
                             <constraint firstItem="Pox-mP-RJC" firstAttribute="centerX" secondItem="RZb-ny-uyj" secondAttribute="centerX" id="HyU-oZ-O3c"/>
                             <constraint firstItem="EP9-hW-phA" firstAttribute="top" secondItem="WcZ-9i-hMc" secondAttribute="bottom" constant="20" id="SWM-9t-oxr"/>
                             <constraint firstItem="RZb-ny-uyj" firstAttribute="centerX" secondItem="4k6-SW-vvl" secondAttribute="centerX" id="Vbx-NE-lj0"/>
@@ -500,11 +505,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="key" width="400" height="400"/>
         <image name="treasure" width="349" height="284"/>
         <image name="xmas_cat" width="272" height="208"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y8U-bb-d86"/>
-        <segue reference="RRC-9J-zPG"/>
+        <segue reference="8e6-ru-asf"/>
+        <segue reference="oEd-wA-hMf"/>
     </inferredMetricsTieBreakers>
 </document>
