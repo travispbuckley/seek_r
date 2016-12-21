@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0918EB8B1E07216500FC113E /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918EB8A1E07216500FC113E /* SendMessageViewController.swift */; };
 		0918EB8D1E073CDF00FC113E /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918EB8C1E073CDF00FC113E /* MessagesTableViewController.swift */; };
+		0953540D1E0AD76200EA20B5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0953540C1E0AD76200EA20B5 /* BigInt.framework */; };
 		09C073E61E048BC400B9C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073E51E048BC400B9C36B /* AppDelegate.swift */; };
 		09C073E81E048BC400B9C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C073E71E048BC400B9C36B /* ViewController.swift */; };
 		09C073EB1E048BC400B9C36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C073E91E048BC400B9C36B /* Main.storyboard */; };
@@ -18,6 +19,9 @@
 		09C074061E048BC500B9C36B /* SEEK_RUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074051E048BC500B9C36B /* SEEK_RUITests.swift */; };
 		09C074181E049A7500B9C36B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074171E049A7500B9C36B /* RegisterViewController.swift */; };
 		09C074251E0849ED00B9C36B /* ConversationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C074241E0849ED00B9C36B /* ConversationDetailViewController.swift */; };
+		13329ABCEB345C4BB80115F2 /* Pods_SEEK_RUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42F2DCDBDF531F90DC9E733 /* Pods_SEEK_RUITests.framework */; };
+		83373360B0E9422422C40477 /* Pods_SEEK_R.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98702FF627A86DA5F8F72C8 /* Pods_SEEK_R.framework */; };
+		CCEA433EEDAC0E4E8D6254A9 /* Pods_SEEK_RTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8D86838A068B5321D9BC0 /* Pods_SEEK_RTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0918EB8A1E07216500FC113E /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		0918EB8C1E073CDF00FC113E /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		0953540C1E0AD76200EA20B5 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = "Pods/../build/Debug-iphoneos/BigInt/BigInt.framework"; sourceTree = "<group>"; };
 		09C073E21E048BC400B9C36B /* SEEK_R.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SEEK_R.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C073E51E048BC400B9C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C073E71E048BC400B9C36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +60,15 @@
 		09C074071E048BC500B9C36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09C074171E049A7500B9C36B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
 		09C074241E0849ED00B9C36B /* ConversationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailViewController.swift; sourceTree = "<group>"; };
+		60DB659D4A89A9BA7BE1B10B /* Pods-SEEK_R.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEEK_R.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SEEK_R/Pods-SEEK_R.debug.xcconfig"; sourceTree = "<group>"; };
+		7EB8D86838A068B5321D9BC0 /* Pods_SEEK_RTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SEEK_RTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42F2DCDBDF531F90DC9E733 /* Pods_SEEK_RUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SEEK_RUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8CF6E7B78B0F9A64DB237FD /* Pods-SEEK_R.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEEK_R.release.xcconfig"; path = "Pods/Target Support Files/Pods-SEEK_R/Pods-SEEK_R.release.xcconfig"; sourceTree = "<group>"; };
+		B1EA5495B46119B992ECB5E4 /* Pods-SEEK_RTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEEK_RTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SEEK_RTests/Pods-SEEK_RTests.release.xcconfig"; sourceTree = "<group>"; };
+		BDD699D3FF9D8D1A0DC8383C /* Pods-SEEK_RUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEEK_RUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SEEK_RUITests/Pods-SEEK_RUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D315B148D820702B9E4B675D /* Pods-SEEK_RTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEEK_RTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SEEK_RTests/Pods-SEEK_RTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8355AB3B486D07E8CB5D03B /* Pods-SEEK_RUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEEK_RUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SEEK_RUITests/Pods-SEEK_RUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F98702FF627A86DA5F8F72C8 /* Pods_SEEK_R.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SEEK_R.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0953540D1E0AD76200EA20B5 /* BigInt.framework in Frameworks */,
+				83373360B0E9422422C40477 /* Pods_SEEK_R.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCEA433EEDAC0E4E8D6254A9 /* Pods_SEEK_RTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13329ABCEB345C4BB80115F2 /* Pods_SEEK_RUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +107,8 @@
 				09C073F91E048BC500B9C36B /* SEEK_RTests */,
 				09C074041E048BC500B9C36B /* SEEK_RUITests */,
 				09C073E31E048BC400B9C36B /* Products */,
+				D62A2101CF99522A2D4967D3 /* Pods */,
+				3F72A8007F849151A290697E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +157,30 @@
 			path = SEEK_RUITests;
 			sourceTree = "<group>";
 		};
+		3F72A8007F849151A290697E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0953540C1E0AD76200EA20B5 /* BigInt.framework */,
+				F98702FF627A86DA5F8F72C8 /* Pods_SEEK_R.framework */,
+				7EB8D86838A068B5321D9BC0 /* Pods_SEEK_RTests.framework */,
+				A42F2DCDBDF531F90DC9E733 /* Pods_SEEK_RUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D62A2101CF99522A2D4967D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60DB659D4A89A9BA7BE1B10B /* Pods-SEEK_R.debug.xcconfig */,
+				A8CF6E7B78B0F9A64DB237FD /* Pods-SEEK_R.release.xcconfig */,
+				D315B148D820702B9E4B675D /* Pods-SEEK_RTests.debug.xcconfig */,
+				B1EA5495B46119B992ECB5E4 /* Pods-SEEK_RTests.release.xcconfig */,
+				D8355AB3B486D07E8CB5D03B /* Pods-SEEK_RUITests.debug.xcconfig */,
+				BDD699D3FF9D8D1A0DC8383C /* Pods-SEEK_RUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09C0740A1E048BC500B9C36B /* Build configuration list for PBXNativeTarget "SEEK_R" */;
 			buildPhases = (
+				61D4157F9BF77DFE45AC285A /* [CP] Check Pods Manifest.lock */,
 				09C073DE1E048BC400B9C36B /* Sources */,
 				09C073DF1E048BC400B9C36B /* Frameworks */,
 				09C073E01E048BC400B9C36B /* Resources */,
+				4BB23F3BADA4DCCCEB46D8E0 /* [CP] Embed Pods Frameworks */,
+				48E525FAA41197F4089D1F95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09C0740D1E048BC500B9C36B /* Build configuration list for PBXNativeTarget "SEEK_RTests" */;
 			buildPhases = (
+				7AA3ED864E05CD67297F9CC5 /* [CP] Check Pods Manifest.lock */,
 				09C073F21E048BC500B9C36B /* Sources */,
 				09C073F31E048BC500B9C36B /* Frameworks */,
 				09C073F41E048BC500B9C36B /* Resources */,
+				A179714E88BE5B3CCA1CE879 /* [CP] Embed Pods Frameworks */,
+				E0BE2A9A15E7DA00D170AA61 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09C074101E048BC500B9C36B /* Build configuration list for PBXNativeTarget "SEEK_RUITests" */;
 			buildPhases = (
+				0E5908F6417AC08DE9FDE9B8 /* [CP] Check Pods Manifest.lock */,
 				09C073FD1E048BC500B9C36B /* Sources */,
 				09C073FE1E048BC500B9C36B /* Frameworks */,
 				09C073FF1E048BC500B9C36B /* Resources */,
+				8DE4BF83D1C34C179BB8296E /* [CP] Embed Pods Frameworks */,
+				B7E4E2D295CA3C9929917809 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +319,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E5908F6417AC08DE9FDE9B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		48E525FAA41197F4089D1F95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SEEK_R/Pods-SEEK_R-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BB23F3BADA4DCCCEB46D8E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SEEK_R/Pods-SEEK_R-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61D4157F9BF77DFE45AC285A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7AA3ED864E05CD67297F9CC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8DE4BF83D1C34C179BB8296E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SEEK_RUITests/Pods-SEEK_RUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A179714E88BE5B3CCA1CE879 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SEEK_RTests/Pods-SEEK_RTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7E4E2D295CA3C9929917809 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SEEK_RUITests/Pods-SEEK_RUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0BE2A9A15E7DA00D170AA61 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SEEK_RTests/Pods-SEEK_RTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09C073DE1E048BC400B9C36B /* Sources */ = {
@@ -425,9 +616,14 @@
 		};
 		09C0740B1E048BC500B9C36B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60DB659D4A89A9BA7BE1B10B /* Pods-SEEK_R.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 42C2G5VRTB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/BigInt",
+				);
 				INFOPLIST_FILE = SEEK_R/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dbcseekrgroup.SEEK-R.SEEK-R";
@@ -438,9 +634,14 @@
 		};
 		09C0740C1E048BC500B9C36B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8CF6E7B78B0F9A64DB237FD /* Pods-SEEK_R.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 42C2G5VRTB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/BigInt",
+				);
 				INFOPLIST_FILE = SEEK_R/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dbcseekrgroup.SEEK-R.SEEK-R";
@@ -451,6 +652,7 @@
 		};
 		09C0740E1E048BC500B9C36B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D315B148D820702B9E4B675D /* Pods-SEEK_RTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -465,6 +667,7 @@
 		};
 		09C0740F1E048BC500B9C36B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1EA5495B46119B992ECB5E4 /* Pods-SEEK_RTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -479,6 +682,7 @@
 		};
 		09C074111E048BC500B9C36B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8355AB3B486D07E8CB5D03B /* Pods-SEEK_RUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SEEK_RUITests/Info.plist;
@@ -492,6 +696,7 @@
 		};
 		09C074121E048BC500B9C36B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDD699D3FF9D8D1A0DC8383C /* Pods-SEEK_RUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SEEK_RUITests/Info.plist;
