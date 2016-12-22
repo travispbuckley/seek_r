@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
-        httpRequest("http://localhost:3000/sessions","POST",postString)
+        httpRequest("https://seekr-backend.herokuapp.com/sessions","POST",postString)
     }
 
     

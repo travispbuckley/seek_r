@@ -43,6 +43,6 @@ class RegisterViewController: ViewController {
         newPrivateKey.username = usernameField.text!
         DatabaseController.saveContext()
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)&user%5Bpublic_key_n%5D=\(n)&user%5Bpublic_key_e%5D=\(e)"
-        httpRequest("http://localhost:3000/users","POST",postString)
+        httpRequest("https://seekr-backend.herokuapp.com/users","POST",postString)
     }
   }
