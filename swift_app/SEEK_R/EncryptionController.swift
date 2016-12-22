@@ -77,7 +77,8 @@ class EncryptionController{
     }
     
     class  func sendEncryptedMessage(_ username: String,_ message: String,_ locationCoords: String) {
-        let urlString = "https://seekr-backend.herokuapp.com/users/" + username
+        let urlString = "http://localhost:3000/users/" + username
+//        let urlString = "https://seekr-backend.herokuapp.com/users/" + username
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = "GET"
         let session = URLSession.shared
@@ -121,7 +122,8 @@ class EncryptionController{
                 
                 let encryptedMessage = String(EncryptionController.encryptMessage(message, bigintN!, bigintE!))
                 let yourEncryptedMessage = String(EncryptionController.encryptMessage(message, yourBigintN!, yourBigintE!))
-                let url = "https://seekr-backend.herokuapp.com/messages"
+                let url = "http://localhost:3000/messages"
+//                let url = "https://seekr-backend.herokuapp.com/messages"
                 var request = URLRequest(url: URL(string: url)!)
                 request.httpMethod = "POST"
                 let session = URLSession.shared

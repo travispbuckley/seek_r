@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
-        httpRequest("https://seekr-backend.herokuapp.com/sessions","POST",postString)
+        httpRequest("http://localhost:3000/sessions","POST",postString)
+//        httpRequest("https://seekr-backend.herokuapp.com/sessions","POST",postString)
     }
 
     
@@ -31,8 +32,6 @@ class ViewController: UIViewController {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = method
         let session = URLSession.shared
-        //let postString = "name=\(usernameField.text!)&password=\(password.text!)"
-        //let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
         request.httpBody = postString.data(using: .utf8)
         let task = session.dataTask(with: request as URLRequest, completionHandler: {
             (

@@ -44,10 +44,7 @@ class SendMessageViewController: ViewController {
 
     @IBAction func sendMessage(_ sender: UIButton) {
 
-//        httpRequest("https://seekr-backend.herokuapp.com/users/" + receiverName.text!,"GET","")
 
-//        let postString = "message%5Breceiver%5D=\(receiverName.text!)&message%5Bbody%5D=\(encryptedMessage)&message%5Blocation%5D=\(locationCoords.text!)"
-//        httpRequest("https://seekr-backend.herokuapp.com/","POST",postString)
         EncryptionController.sendEncryptedMessage(receiverName.text!,messageBody.text!,locationCoords.text!)
     }
 

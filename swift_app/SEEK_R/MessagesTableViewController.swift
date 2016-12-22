@@ -13,7 +13,8 @@ class MessagesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestConversations("https://seekr-backend.herokuapp.com/messages")
+        requestConversations("http://localhost:3000/messages")
+//        requestConversations("https://seekr-backend.herokuapp.com/messages")
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -64,8 +65,6 @@ class MessagesTableViewController: UITableViewController {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         let session = URLSession.shared
-        //let postString = "name=\(usernameField.text!)&password=\(password.text!)"
-        //let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
         let task = session.dataTask(with: request as URLRequest, completionHandler: {
             (
             data, response, error) in

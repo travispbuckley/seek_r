@@ -33,7 +33,8 @@ class ConversationDetailViewController: UIViewController {
         super.viewDidLoad()
         messageWindow.text = ""
         if let address = webSite {
-            self.requestMessages("https://seekr-backend.herokuapp.com/messages/" + address)
+            self.requestMessages("http://localhost:3000/messages/" + address)
+//            self.requestMessages("https://seekr-backend.herokuapp.com/messages/" + address)
         }
     }
 
@@ -71,6 +72,8 @@ class ConversationDetailViewController: UIViewController {
             {
                 if let messages = data_block["messages"] as? NSArray
                 {
+                    let sender_names = data_block["sender_names"] as? NSArray
+                    let send_times = data_block["send_times"] as? NSArray
                     var i = 0
                     var secretD = BigUInt(0)
                     var secretN = BigUInt(0)
@@ -92,10 +95,12 @@ class ConversationDetailViewController: UIViewController {
                     
                     while i < messages.count {
                         var encryptedMsg = messages[i] as! String
+                        var sender = sender_names?[i] as! String
+                        var sent_time = send_times?[i] as! String
                         print(encryptedMsg)
                         var decyrptedMessage = EncryptionController.decryptMessage(BigUInt(encryptedMsg)! , secretN , secretD)
                         print(decyrptedMessage)
-                      message += "\(decyrptedMessage)\n"
+                      message += "\(sender): \(decyrptedMessage) at:\(sent_time)\n"
                       i += 1
                     }
                     
