@@ -13,10 +13,12 @@ class MessagesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestConversations("http://localhost:3000/messages")
-//        requestConversations("https://seekr-backend.herokuapp.com/messages")
-        
+        requestConversations("https://seekr-backend.herokuapp.com/messages")
+//requestConversations("http://localhost:3000/messages")
 
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,8 +51,6 @@ class MessagesTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-        
         if segue.identifier == "ShowAttractionDetails" {
              print("debug: prepare executed in MessagesTableViewController")
             let detailViewController = segue.destination
@@ -97,14 +97,9 @@ class MessagesTableViewController: UITableViewController {
                 }
 
             }
-            
-            
-            
         })
         
         task.resume()
-        
-
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -117,9 +112,17 @@ class MessagesTableViewController: UITableViewController {
     }
     
     
-    
-    
-    
+    // for the navigation bar ; refresh page!
+//    override func viewDidAppear(_ animated: Bool) {
+//    // Reload your data here, and this gets called
+//    // after the view transition is complete.
+//        requestConversations("https://seekr-backend.herokuapp.com/messages")
+//        
+//        // makes table reload its data
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+//    }
     
     
     
