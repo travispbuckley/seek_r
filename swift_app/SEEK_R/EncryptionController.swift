@@ -64,8 +64,8 @@ class EncryptionController{
                 }
             }
         }
-        let p = generatePrime(100)
-        let q = generatePrime(100)
+        let p = generatePrime(512)
+        let q = generatePrime(512)
         let n = String(p * q)
         let e: BigUInt = 65537
         let E = String(e)
