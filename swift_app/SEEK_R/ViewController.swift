@@ -20,6 +20,11 @@ class ViewController: UIViewController {
         navigationItem.hidesBackButton = true;        // may cause back button issues later on.
     }
     
+    // for hiding keyboardL
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     @IBAction func loginButton(_ sender: UIButton) {
         let postString = "user%5Busername%5D=\(usernameField.text!)&user%5Bpassword%5D=\(password.text!)"
         httpRequest("https://seekr-backend.herokuapp.com/sessions","POST",postString)
