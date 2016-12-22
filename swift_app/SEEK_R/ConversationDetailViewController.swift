@@ -33,7 +33,7 @@ class ConversationDetailViewController: UIViewController {
         super.viewDidLoad()
         messageWindow.text = ""
         if let address = webSite {
-            self.requestMessages("http://localhost:3000/messages/" + address)
+            self.requestMessages("https://seekr-backend.herokuapp.com/messages/" + address)
         }
     }
 

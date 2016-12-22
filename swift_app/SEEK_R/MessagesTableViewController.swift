@@ -13,7 +13,7 @@ class MessagesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestConversations("http://localhost:3000/messages")
+        requestConversations("https://seekr-backend.herokuapp.com/messages")
         
 
         // Uncomment the following line to preserve selection between presentations
