@@ -63,4 +63,24 @@ class DatabaseController{
             }
         }
     }
-}
+    class func deleteAllData(entity: String){
+        let managedContext = self.getContext()
+       let fetchRequest:NSFetchRequest<Privatekey> = Privatekey.fetchRequest()
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                print(managedContext)
+                managedContext.delete(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
+    }
+    
+    }
+

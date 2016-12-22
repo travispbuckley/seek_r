@@ -10,7 +10,7 @@ import Foundation
 import BigInt
 class EncryptionController{
     
-    class func encrypt(_ messageBody: String,_ keyN: BigUInt,_ keyEOrD: BigUInt) -> BigUInt {
+    class func encryptMessage(_ messageBody: String,_ keyN: BigUInt,_ keyEOrD: BigUInt) -> BigUInt {
         typealias Key = (modulus: BigUInt, exponent: BigUInt)
         let key = (keyN,keyEOrD)
         
@@ -25,22 +25,33 @@ class EncryptionController{
         return cyphertext
     }
     
-    class func decrypt(_ messageBody: BigUInt,_ privateKeyN: BigUInt,_ privateKeyD: BigUInt) -> String {
+    class func decryptMessage(_ messageBody: BigUInt,_ privateKeyN: BigUInt,_ privateKeyD: BigUInt) -> String {
         typealias Key = (modulus: BigUInt, exponent: BigUInt)
         let privateKey = (privateKeyN,privateKeyD)
         print(messageBody)
+        print("----------------")
         print(privateKeyN)
+        print("--n--------------")
+
         print(privateKeyD)
+        print("---d-------------")
+
         func encrypt(_ message: BigUInt, key: Key) -> BigUInt {
             return message.power(key.exponent, modulus: key.modulus)
         }
+        
         let plaintext = encrypt(messageBody, key: privateKey)
+        print(privateKey)
         
         //good
         print(plaintext)
         let received = String(data: plaintext.serialize(), encoding: String.Encoding.utf8)
         print(received)
-        return received!
+        if (received == nil){
+            return "HERE IS A BUG IN DECRYPT"
+        }else{
+            return received!
+        }
     }
     
     class func generateKey() -> NSArray{
@@ -108,8 +119,8 @@ class EncryptionController{
                 let yourBigintE = BigUInt(yourPublicKeyE)
                 
                 
-                let encryptedMessage = String(EncryptionController.encrypt(message, bigintN!, bigintE!))
-                let yourEncryptedMessage = String(EncryptionController.encrypt(message, yourBigintN!, yourBigintE!))
+                let encryptedMessage = String(EncryptionController.encryptMessage(message, bigintN!, bigintE!))
+                let yourEncryptedMessage = String(EncryptionController.encryptMessage(message, yourBigintN!, yourBigintE!))
                 let url = "http://localhost:3000/messages"
                 var request = URLRequest(url: URL(string: url)!)
                 request.httpMethod = "POST"

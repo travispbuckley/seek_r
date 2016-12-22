@@ -82,8 +82,8 @@ class ConversationDetailViewController: UIViewController {
                     do{
                         let searchResult = try DatabaseController.getContext().fetch(fetchRequest)
                         print(searchResult)
-                        secretN = BigUInt(searchResult[0].private_key_n!)!
-                        secretD = BigUInt(searchResult[0].private_key_d!)!
+                        secretN = BigUInt(searchResult[searchResult.count - 1].private_key_n!)!
+                        secretD = BigUInt(searchResult[searchResult.count - 1].private_key_d!)!
                         print(secretD)
                     }
                     catch{
@@ -93,7 +93,7 @@ class ConversationDetailViewController: UIViewController {
                     while i < messages.count {
                         var encryptedMsg = messages[i] as! String
                         print(encryptedMsg)
-                        var decyrptedMessage = EncryptionController.decrypt(BigUInt(encryptedMsg)! , secretN , secretD)
+                        var decyrptedMessage = EncryptionController.decryptMessage(BigUInt(encryptedMsg)! , secretN , secretD)
                         print(decyrptedMessage)
                       message += "\(decyrptedMessage)\n"
                       i += 1
