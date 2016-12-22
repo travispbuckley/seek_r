@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     // for hiding keyboardL
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        
     }
 
     @IBAction func loginButton(_ sender: UIButton) {

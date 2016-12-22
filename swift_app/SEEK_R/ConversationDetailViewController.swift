@@ -36,6 +36,9 @@ class ConversationDetailViewController: UIViewController {
         if let address = webSite {
             self.requestMessages("https://seekr-backend.herokuapp.com/messages/" + address)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         stopSpinning()
     }
 

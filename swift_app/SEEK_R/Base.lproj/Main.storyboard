@@ -449,7 +449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MV6-NS-nE0">
-                                <rect key="frame" x="67" y="545" width="281" height="73"/>
+                                <rect key="frame" x="67" y="594" width="281" height="73"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="2QA-ni-tmC"/>
@@ -478,21 +478,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAx-du-Hn8">
-                                <rect key="frame" x="207.66666666666666" y="72" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207.66666666666666" y="28" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.2274509804" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rMn-Dt-SVk">
-                                <rect key="frame" x="172" y="472" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rMn-Dt-SVk">
+                                <rect key="frame" x="189" y="349.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.94710057117112334" green="1" blue="0.99132680494701597" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.22745098039215686" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="rMn-Dt-SVk" firstAttribute="centerX" secondItem="PH1-qz-A65" secondAttribute="centerX" id="Iqc-oD-DYM"/>
                             <constraint firstItem="Iln-M9-yRX" firstAttribute="top" secondItem="MV6-NS-nE0" secondAttribute="bottom" constant="69" id="J2D-m9-BqM"/>
+                            <constraint firstItem="rMn-Dt-SVk" firstAttribute="centerY" secondItem="PH1-qz-A65" secondAttribute="centerY" id="R39-sc-SWB"/>
                             <constraint firstItem="MV6-NS-nE0" firstAttribute="centerX" secondItem="PH1-qz-A65" secondAttribute="centerX" id="Sw4-cw-4CO"/>
                             <constraint firstItem="bAx-du-Hn8" firstAttribute="top" secondItem="y3J-CB-J0u" secondAttribute="bottom" constant="8" id="WTx-0M-fsK"/>
                             <constraint firstItem="bAx-du-Hn8" firstAttribute="centerX" secondItem="PH1-qz-A65" secondAttribute="centerX" id="pC4-dr-Usw"/>
@@ -532,7 +533,7 @@
         <image name="xmas_cat" width="272" height="208"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kpr-l9-OYb"/>
+        <segue reference="RRC-9J-zPG"/>
         <segue reference="Y8U-bb-d86"/>
     </inferredMetricsTieBreakers>
 </document>
