@@ -31,10 +31,12 @@ class ConversationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startSpinning()
         messageWindow.text = ""
         if let address = webSite {
             self.requestMessages("https://seekr-backend.herokuapp.com/messages/" + address)
         }
+        stopSpinning()
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,5 +122,16 @@ class ConversationDetailViewController: UIViewController {
         })
         task.resume()
     }
-
+    
+    
+    
+    //// loading bar /////////////
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    func startSpinning() {
+        activityIndicatorView.startAnimating()
+    }
+    func stopSpinning() {
+        activityIndicatorView.stopAnimating()
+    }
+    ///////////////////////////
 }
