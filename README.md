@@ -13,13 +13,13 @@
 
 ### Installing:
 
-To download this app, go to the app store and download the application. User registration will be required in order to begin or start a hunt. At the time, this app is only supported on iOS devices.
+To download this app, you must have Xcode installed on your computer. Clone the repository, and run the application in xcode on a device connected to your computer. User registration will be required in order to begin. At the time, this app is only supported on iOS devices.
 
 ### What is SEEK_R?
 
-SEEK_R is an iOS application where users can create a 'scavenger hunt' for other users to accept and complete. It is similar to geocaching, but it is directed towards private groups rather than the public. 
+SEEK_R is an iOS application where users can send encrypted messages to one another along with their coordinates. Messages are encrypted prior to being sent, and are stored encrypted as well. The only way to decrypt a message, is for the intended user to use their private key, which is created and stored only on their personal device.  
 
-The app includes a local board based on location that display a list of hunts created by users. One user can accept the hunt and then follow the gps coordinates provided by the creator. A messaging system will be created for the two users to connect with each other for hints or completion confirmation. Upon completion of a hunt, the seeker will provide a rating for the hider based on difficulty and coolness of location.
+When a user sends their current GPS location in a message, the other user can display that location in their native apple maps location by clicking the button inside of their private message with that user. 
 
 ### Backend
 
